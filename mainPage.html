@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="myStyle.css">
+</head>
+
+<body>
+    <h1>To Do List Project</h1>
+    <p>-=- This is my attempt at a to do list in a HTML/JS framework -=-</p>
+
+    <table>
+        <tr>
+            <th>To Start</th>
+            <th>Currently Working On</th>
+            <th>Finished!</th>
+        </tr>
+        <tr>
+            <td class="holder" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+            <td class="holder" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+            <td class="holder" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+        </tr>
+    </table>
+
+    <br>
+
+    <div id="waitingRoom" class="holder" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <p class="tasks" id="drag1" draggable="true" ondragstart="drag(event)">
+            Walk my dog
+            <br>
+            <br>
+            <button id="delete1" class="taskButton" onclick="deleteElement(this.id)">Delete</button>
+        </p>
+    </div>
+
+    <br>
+
+    <input placeholder="Walk my dog" id="inputBox" name="name" maxlength="100" size="10" />
+    <button class="newTask" onclick="createNewElement(event)">Create New Task</button>
+</body>
+
+</html>
