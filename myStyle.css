@@ -1,7 +1,7 @@
 body {
     font-family: 'Courier New', monospace;
     text-align: center;
-    background-color: beige;
+    background-color: whitesmoke;
 }
 
 table {
@@ -9,6 +9,7 @@ table {
     border-collapse: collapse;
     width: 100%;
     table-layout: fixed;
+    background-color: white;
 }
 
 td,
@@ -16,7 +17,6 @@ th {
     border: 2px solid black;
     text-align: center;
     vertical-align: top;
-
     padding: 15px;
 }
 
@@ -59,10 +59,12 @@ th {
     text-align: center;
     background-color: white;
     cursor: pointer;
+    
 }
 
 #inputBox {
     font-family: 'Courier New', monospace;
     padding: 10px;
     border: 2px solid black;
+    display:inline-block;
 }
