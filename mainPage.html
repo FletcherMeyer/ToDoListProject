@@ -24,20 +24,21 @@
     </table>
 
     <br>
+    <input placeholder="Walk my dog" id="inputBox" maxlength="100" size="30" />
+    <button class="newTask" onclick="createNewElement(event)">➕</button>
 
+    <br>
+    <br>
     <div id="waitingRoom" class="holder" ondrop="drop(event)" ondragover="allowDrop(event)">
         <p class="tasks" id="drag1" draggable="true" ondragstart="drag(event)">
             Walk my dog
             <br>
             <br>
-            <button id="delete1" class="taskButton" onclick="deleteElement(this.id)">Delete</button>
+            <button id="delete1" class="taskButton" onclick="deleteElement(this.id)">❌</button>
+            <button id="edit1" class="taskButton" onclick="editElement(this.id)">✏️</button>
         </p>
     </div>
 
-    <br>
-
-    <input placeholder="Walk my dog" id="inputBox" name="name" maxlength="100" size="10" />
-    <button class="newTask" onclick="createNewElement(event)">Create New Task</button>
 </body>
 
 </html>
