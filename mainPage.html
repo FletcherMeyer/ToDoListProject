@@ -1,14 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <script src="main.js"></script>
+    <!-- <script src="cookieHandler.js"></script> -->
     <link rel="stylesheet" href="myStyle.css">
+    <title>To Do List</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
 </head>
 
 <body>
     <h1>To Do List Project</h1>
     <p>-=- This is my attempt at a to do list in a HTML/JS framework -=-</p>
+
+    <br>
+    <button id="clear" class="taskButton" onclick="clearList()">Clear</button>
+    <button id="save" class="taskButton" onclick="saveCookies()">Save</button>
+    <br>
+    <br>
 
     <table>
         <tr>
@@ -17,27 +28,19 @@
             <th>Finished!</th>
         </tr>
         <tr>
-            <td class="holder" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
-            <td class="holder" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
-            <td class="holder" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+            <td class="holder" id="toStart" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+            <td class="holder" id="doing" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
+            <td class="holder" id="finished" ondrop="drop(event)" ondragover="allowDrop(event)"></td>
         </tr>
     </table>
 
     <br>
-    <input placeholder="Walk my dog" id="inputBox" maxlength="100" size="30" />
-    <button class="newTask" onclick="createNewElement(event)">➕</button>
+    <input type="text" onkeypress="clickPress(event, 'new')" placeholder="Walk my dog" id="inputBox" maxlength="100" size="30" autofocus />
+    <button class="newTask" onclick="createNewElement()">➕</button>
 
     <br>
     <br>
-    <div id="waitingRoom" class="holder" ondrop="drop(event)" ondragover="allowDrop(event)">
-        <p class="tasks" id="drag1" draggable="true" ondragstart="drag(event)">
-            Walk my dog
-            <br>
-            <br>
-            <button id="delete1" class="taskButton" onclick="deleteElement(this.id)">❌</button>
-            <button id="edit1" class="taskButton" onclick="editElement(this.id)">✏️</button>
-        </p>
-    </div>
+    <div id="waitingRoom" class="holder" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
 </body>
 
