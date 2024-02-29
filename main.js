@@ -85,22 +85,21 @@ function clickPress(event, type, id) {
 /* Cookie Crap */
 
 window.onload = function() {
-    if (document.cookie == null) {
+    if (document.cookie == undefined) {
         p.innerHTML = "Walk my dog" + '<br><br><button id="delete0" class="taskButton" onclick="deleteElement(this.id)">❌</button> <button id="edit0" class="taskButton" onclick="editElement(this.id)">✏️</button>'
         document.getElementById("waitingRoom").appendChild(p);
-    };
+    };    
     const cookieString = document.cookie;
-    
     const cookies = cookieString.split(';')
 
     cookies.forEach(cookie => {
-        const tempCookie = cookie.split('q%');
-        const category = tempCookie.shift().replace('=','').replace(' ','');
-        console.log(category);
+        const category = cookie.split("=")[0].replace('=','').replace(' ','');;
+        const tempCookie = cookie.split("=")[1].split('q%');
+
         tempCookie.forEach(task => {
+            if (task == "") return;
             numOfTasks++;
             
-            console.log(task);
             const p = document.createElement("p");
             p.id = "drag" + numOfTasks;
             p.className = "tasks";
@@ -142,8 +141,15 @@ function saveCookies() {
     document.cookie = "toStart="+toStartText+";"
     document.cookie = "doing="+doingText+";"
     document.cookie = "finished="+finishedText+";"
+
 }
 
+function clearCookies(){
+    document.cookie = "toStart=;"
+    document.cookie = "doing=;"
+    document.cookie = "finished=;"
+
+}
 function testCookies() {
     console.log(document.cookie);
 }
